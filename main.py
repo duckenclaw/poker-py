@@ -13,7 +13,7 @@ from poker.player import Action, ActionType
 ASSETS = Path(__file__).parent / "assets"
 app.add_static_files("/assets", str(ASSETS))
 
-# Wymiary sprite'ów w cards.png (potwierdzone: 944x385).
+# Wymiary sprite'ów w cards.png.
 CARD_W, CARD_H = 48, 64
 BACK_ROW_Y = 256
 BACK_COL = {"red": 0, "green": 2, "blue": 4, "purple": 6}
@@ -23,9 +23,8 @@ SCALE = 2.0
 BOT_SCALE = 1.25
 
 # Żetony w tokens.png (368x192): 8 kolorów po 4 warianty stosu (1-4 sztuki).
-# Każdy kolor zajmuje blok 4 kolumn; warianty stosu to kolumny w bloku.
 TOKEN_W, TOKEN_H = 46, 48
-# Kolor gracza -> (wiersz, kolumna bazowa bloku) w siatce tokens.png.
+# Kolor gracza w siatce tokens.png.
 TOKEN_BLOCK = {
     "red": (0, 0),
     "blue": (0, 4),
@@ -34,6 +33,7 @@ TOKEN_BLOCK = {
 }
 
 engine = GameEngine()
+
 # Indeksy kart zaznaczonych do wymiany w fazie dobierania.
 discard_selection: set[int] = set()
 
@@ -176,7 +176,7 @@ def table() -> None:
         # Sterowanie
         _render_controls(state)
 
-    # AI gra automatycznie z lekkim opóźnieniem dla naturalnego tempa.
+    # AI gra automatycznie z lekkim opóźnieniem
     if _ai_pending():
         ui.timer(0.7, table.refresh, once=True)
 
@@ -277,7 +277,7 @@ def _render_bet_buttons(state: dict) -> None:
                       color="green")
 
 
-# CSS globalny: czcionka Pixeloid Mono, układ bez przewijania, poświata układu.
+# CSS globalny
 PAGE_CSS = """
 @font-face {
     font-family: 'Pixeloid Mono';

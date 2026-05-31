@@ -1,4 +1,4 @@
-"""Strategie AI. Wzorzec Strategy: AIPlayer trzyma jedną strategię."""
+"""Strategie AI"""
 from __future__ import annotations
 
 from collections import Counter
