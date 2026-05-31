@@ -317,7 +317,7 @@ class GameEngine:
         self.button = (self.button + 1) % len(self.players)
         self.start_hand()
 
-    # ----- budowanie widoku i serializacja -----
+    # ----- budowanie widoku -----
 
     def _build_view(self, player: Player) -> PlayerView:
         opponents = tuple(
